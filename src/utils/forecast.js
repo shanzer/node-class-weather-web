@@ -8,7 +8,7 @@ const forecast = (lat, long, callback) => {
         if (error) {
             callback(error, undefined);
         } else {
-            callback(undefined, 'It is currently ' + response.body.current.temperature + " and feels like " + response.body.current.feelslike + " " + response.body.current.weather_descriptions[0]);
+            callback(undefined, 'It is currently ' + response.body.current.weather_descriptions[0].toLowerCase() + " and " + response.body.current.temperature + " degrees (feels like " + response.body.current.feelslike + " degrees) " + ". The humidity is " + response.body.current.humidity + "%");
         }
     });
 }
